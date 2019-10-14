@@ -1,0 +1,102 @@
+﻿<Window x:Class="StockView.PresentationLayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockView"
+        xmlns:charting="clr-namespace:System.Web.UI.DataVisualization.Charting;assembly=System.Web.DataVisualization"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:Chr="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        mc:Ignorable="d"
+        Title="StockView"
+        Height="500"
+        Width="600">
+    <Grid>
+        
+        <CheckBox Name="cbOpeningPrice"
+                  IsChecked="True"
+                  Content="开盘价"
+                  HorizontalAlignment="Left"
+                  Margin="275,31,0,0"
+                  VerticalAlignment="Top" />
+        <CheckBox Name="cbMaxPrice"
+                  IsChecked="True"
+                  Content="最高价"
+                  HorizontalAlignment="Left"
+                  Margin="275,63,0,0"
+                  VerticalAlignment="Top" />
+        <CheckBox Name="cbMinPrice"
+                  IsChecked="True"
+                  Content="最低价"
+                  HorizontalAlignment="Left"
+                  Margin="394,32,0,0"
+                  VerticalAlignment="Top" />
+        <CheckBox Name="cbClosingPrice"
+                  IsChecked="True"
+                  Content="收盘价"
+                  HorizontalAlignment="Left"
+                  Margin="394,63,0,0"
+                  VerticalAlignment="Top" />
+        <StackPanel HorizontalAlignment="Left"
+                    Height="25"
+                    Margin="25,25,0,0"
+                    VerticalAlignment="Top"
+                    Width="175"
+                    Orientation="Horizontal">
+            <Label x:Name="lblBeginDate"
+                   Content="开始日期："
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+            <TextBox x:Name="txtBoxBeginDate"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Left"
+                     Height="25"
+                     TextWrapping="NoWrap"
+                     Text="1999-11-10"
+                     VerticalAlignment="Top"
+                     Width="105"
+                     Margin="0,0,0,-0.6" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left"
+                    Height="25"
+                    Margin="25,60,0,0"
+                    VerticalAlignment="Top"
+                    Width="175"
+                    Orientation="Horizontal">
+            <Label x:Name="lblEndDate"
+                   Content="结束日期："
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+            <TextBox x:Name="txtBoxEndDate"
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Height="25"
+                     TextWrapping="NoWrap"
+                     Text="2016-06-08"
+                     VerticalAlignment="Top"
+                     Width="105" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left"
+                    Height="54"
+                    Margin="495,31,0,0"
+                    VerticalAlignment="Top"
+                    Width="75">
+            <Button Name="btnSearch"
+                    Content="搜索"
+                    Click="BtnSearch_Click" />
+            <Button Name="btnClear"
+                    Content="清空"
+                    Margin="0,10,0,0"
+                    Click="BtnClear_Click" />
+        </StackPanel>
+        
+        <DataGrid Name="dgShow" HorizontalAlignment="Left"
+                  Height="305"
+                  Margin="25,105,0,0"
+                  VerticalAlignment="Top"
+                  Width="545" />
+
+    </Grid>
+</Window>
